@@ -1,0 +1,29 @@
+package org.firstinspires.ftc.teamcode.pedroPathing;
+
+import com.pedropathing.geometry.Pose;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import org.firstinspires.ftc.teamcode.pedroPathing.Subsystems.*;
+
+@TeleOp(name = "TeleOp", group = "Competition")
+public class ActualTeleOp extends Init {
+
+    @Override
+    public void init() {
+        super.init();
+    }
+
+    @Override
+    public void start() {
+        robot.intake.on().schedule();
+    }
+
+    @Override
+    public void loop() {
+        // aici pui toate toate chestile controale si alte prostii pentru outtake, turret, blocker, etc.
+
+        if (gamepad1.rightBumperWasPressed()) robot.intake.off().schedule();
+        if (gamepad1.rightBumperWasReleased()) robot.intake.on().schedule();
+
+        super.loop();
+    }
+}
