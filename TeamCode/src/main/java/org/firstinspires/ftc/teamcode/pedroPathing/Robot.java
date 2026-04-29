@@ -16,7 +16,7 @@ public class Robot {
     // init susbysteme
     public final Intake intake;
 
-//    public final Drivetrain drivetrain;
+    public final Drivetrain drivetrain;
 //    public final Flywheel flywheel;
 //    public final Blocker blocker;
 //    public final Turret turret;
@@ -25,7 +25,7 @@ public class Robot {
         hardwareMap = opMode.hardwareMap;
         telemetry = PanelsTelemetry.INSTANCE.getFtcTelemetry();
 
-//        drivetrain = new Drivetrain(this);
+        drivetrain = new Drivetrain(this);
         intake = new Intake(this);
 //        flywheel = new Flywheel(this);
 //        blocker = new Blocker(this);

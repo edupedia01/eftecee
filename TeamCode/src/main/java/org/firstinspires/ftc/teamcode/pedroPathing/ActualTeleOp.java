@@ -24,6 +24,13 @@ public class ActualTeleOp extends Init {
         if (gamepad1.rightBumperWasPressed()) robot.intake.off().schedule();
         if (gamepad1.rightBumperWasReleased()) robot.intake.on().schedule();
 
+        robot.drivetrain.arcadeDrive(
+                -gamepad1.left_stick_y,
+                gamepad1.left_stick_x,
+                gamepad1.right_stick_x
+        );
+
+
         super.loop();
     }
 }

@@ -3,23 +3,21 @@ package org.firstinspires.ftc.teamcode.pedroPathing.Subsystems;
 import com.pedropathing.control.PIDFCoefficients;
 import com.pedropathing.control.PIDFController;
 import com.pedropathing.follower.Follower;
-import com.pedropathing.geometry.Pose;
+//import com.pedropathing.geometry.Pose;
 import com.pedropathing.ivy.Command;
-import com.pedropathing.paths.PathChain;
+//import com.pedropathing.paths.PathChain;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.teamcode.pedroPathing.Auto.Constants;
 import org.firstinspires.ftc.teamcode.pedroPathing.Robot;
 
 import static com.pedropathing.ivy.commands.Commands.infinite;
-import static com.pedropathing.ivy.pedro.PedroCommands.follow;
+//import static com.pedropathing.ivy.pedro.PedroCommands.follow;
 
 public class Drivetrain {
     // modificat pidf. <----
     public static PIDFCoefficients headingCoefficients = new PIDFCoefficients(0, 0, 0, 0);
-    private static Pose poseTransfer = new Pose();
     public final DcMotorEx frontLeft;
     public final DcMotorEx frontRight;
     public final DcMotorEx backLeft;
@@ -42,30 +40,22 @@ public class Drivetrain {
         telemetry = robot.telemetry;
     }
 
-    public static void localize(Pose pose) {
-        poseTransfer = pose;
-    }
-
     public void arcadeDrive(double forward, double strafe, double turn) {
-        // cod mecanu aici pt. vitor
-    }
+        strafe = strafe * 1.1; // Counteract imperfect strafing
+        double frontLeftPower = (forward + strafe + turn) ;
+        double backLeftPower = (forward - strafe + turn) ;
+        double frontRightPower = (forward - strafe - turn);
+        double backRightPower = (forward + strafe - turn);
 
-    public Pose getPose() {
-        return follower.getPose();
-    }
-
-    public void setPose(Pose pose) {
-        follower.setPose(pose);
-    }
-
-    public Command followPath(PathChain path) {
-        return follow(follower, path);
+        frontLeft.setPower(frontLeftPower);
+        frontRight.setPower(frontRightPower);
+        backLeft.setPower(backLeftPower);
+        backRight.setPower(backRightPower);
     }
 
     public Command periodic() {
         return infinite(() -> {
             follower.update();
-            poseTransfer = follower.getPose();
 
             telemetry.addData("Current X", follower.getPose().getX());
             telemetry.addData("Current Y", follower.getPose().getY());
