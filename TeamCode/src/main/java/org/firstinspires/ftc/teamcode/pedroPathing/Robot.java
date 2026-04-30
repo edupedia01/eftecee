@@ -18,7 +18,7 @@ public class Robot {
 
     public final Drivetrain drivetrain;
 //    public final Flywheel flywheel;
-//    public final Blocker blocker;
+    public final Blocker blocker;
 //    public final Turret turret;
 
     public Robot(OpMode opMode) {
@@ -28,7 +28,7 @@ public class Robot {
         drivetrain = new Drivetrain(this);
         intake = new Intake(this);
 //        flywheel = new Flywheel(this);
-//        blocker = new Blocker(this);
+        blocker = new Blocker(this);
 //        turret = new Turret(this);
 //        tapeSensor = new TapeSensor(this);
     }
