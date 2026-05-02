@@ -20,6 +20,7 @@ public class Robot {
 //    public final Flywheel flywheel;
     public final Blocker blocker;
 //    public final Turret turret;
+    public final SensorTouch sensorTouch;
 
     public Robot(OpMode opMode) {
         hardwareMap = opMode.hardwareMap;
@@ -30,6 +31,6 @@ public class Robot {
 //        flywheel = new Flywheel(this);
         blocker = new Blocker(this);
 //        turret = new Turret(this);
-//        tapeSensor = new TapeSensor(this);
+        sensorTouch = new SensorTouch(this);
     }
 }

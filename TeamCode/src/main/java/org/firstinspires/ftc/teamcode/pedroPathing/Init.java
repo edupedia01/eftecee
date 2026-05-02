@@ -14,12 +14,13 @@ public abstract class Init extends OpMode {
         robot = new Robot(this);
 
 
-        // pus aici subsysteme ig
+        // pus aici subsysteme cu periodic command
         schedule(
-//                robot.drivetrain.periodic(),
+                robot.drivetrain.periodic(),
 //                robot.flywheel.periodic(),
 //                robot.turret.periodic(),
-                robot.intake.periodic()
+                robot.intake.periodic(),
+                robot.sensorTouch.periodic()
         );
     }
 

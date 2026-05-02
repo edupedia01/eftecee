@@ -31,7 +31,6 @@ public class ActualTeleOp extends Init {
         if (gamepad1.leftTriggerWasReleased()) robot.blocker.block().schedule();
 
 
-
         robot.drivetrain.arcadeDrive(
                 -gamepad1.left_stick_y,
                 gamepad1.left_stick_x,
