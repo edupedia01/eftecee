@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.teamcode.pedroPathing.Subsystems.*;
+import org.firstinspires.ftc.teamcode.pedroPathing.RobotMath.*;
 
 
 // so like, aici dai scrii toate piesle.
@@ -21,6 +22,7 @@ public class Robot {
     public final Blocker blocker;
 //    public final Turret turret;
     public final SensorTouch sensorTouch;
+    public final TurretAngle turretAngle;
 
     public Robot(OpMode opMode) {
         hardwareMap = opMode.hardwareMap;
@@ -32,5 +34,8 @@ public class Robot {
         blocker = new Blocker(this);
 //        turret = new Turret(this);
         sensorTouch = new SensorTouch(this);
+
+        // math telemetry
+        turretAngle = new TurretAngle(this);
     }
 }

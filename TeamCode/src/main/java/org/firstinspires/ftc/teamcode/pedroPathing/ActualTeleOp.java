@@ -22,7 +22,6 @@ public class ActualTeleOp extends Init {
         // aici pui toate toate chestile controale si alte prostii pentru outtake, turret, blocker, etc.
 
         // ---- INTAKE SI BLOCKER----
-        // note: blocker-ul s-ar putea sa nu mearga ca nu e trecut ca nu are periodic method (si nu e in init)?
         if (gamepad1.rightBumperWasPressed()) robot.intake.on().schedule();
         if (gamepad1.rightBumperWasReleased()) robot.intake.off().schedule();
         if (gamepad1.leftBumperWasPressed()) robot.blocker.unblock().schedule();
