@@ -13,6 +13,7 @@ public class TurretAngle {
     private final Telemetry telemetry;
 
     double CPR = 103.8; // count per revolution, pt 5203 1620 RPM. schimba daca e alt motor
+    double GEAR_RATIO = 4; // aceasta valoare trb schimbata si ea cel mai probabil.
     int position;
     double revolutions;
     double angle;
@@ -23,13 +24,21 @@ public class TurretAngle {
         telemetry = robot.telemetry;
     }
 
-    public void GetTurretAngle(){
+    public double GetTurretAngle(){
         // motor pos
-        position = turretMotor.getCurrentPosition();
-        revolutions = position/CPR;
+        double position = turretMotor.getCurrentPosition();
+        double totalDegrees = (position / (CPR * GEAR_RATIO)) * 360.0;
 
-        angle = revolutions * 360;
-        angleN = angle % 360;
+        double angleN = totalDegrees % 360;
+        if (angleN < 0) {
+            angleN += 360;
+        }
+
+        return angleN;
+    }
+
+    public double GetTicksFromAngle(double turretAngle){
+        return (int)((turretAngle / 360.0) * CPR * GEAR_RATIO);
     }
 
     public Command periodic(){
