@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode.pedroPathing.Subsystems;
 
 import com.pedropathing.ivy.Command;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
 import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
@@ -21,8 +22,10 @@ public class Intake {
 
     public Intake(Robot robot) {
         // de verificat numele de import si daca e de adaugat motor de transfer.
-        intakeMotor = robot.hardwareMap.get(DcMotorEx.class, "intake");
+        intakeMotor = robot.hardwareMap.get(DcMotorEx.class, "motorTest");
         telemetry = robot.telemetry;
+        intakeMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        intakeMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
     public Command on() {

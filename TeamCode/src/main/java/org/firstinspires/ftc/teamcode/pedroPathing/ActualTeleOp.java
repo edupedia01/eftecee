@@ -13,7 +13,7 @@ public class ActualTeleOp extends Init {
 
     @Override
     public void start() {
-        robot.blocker.block().schedule();
+//        robot.blocker.block().schedule();
         robot.intake.on().schedule();
     }
 
@@ -24,10 +24,14 @@ public class ActualTeleOp extends Init {
         // ---- INTAKE SI BLOCKER----
         if (gamepad1.rightBumperWasPressed()) robot.intake.on().schedule();
         if (gamepad1.rightBumperWasReleased()) robot.intake.off().schedule();
-        if (gamepad1.leftBumperWasPressed()) robot.blocker.unblock().schedule();
-        if (gamepad1.leftBumperWasReleased()) robot.blocker.block().schedule();
-        if (gamepad1.leftTriggerWasPressed()) robot.blocker.unblock().schedule();
-        if (gamepad1.leftTriggerWasReleased()) robot.blocker.block().schedule();
+//        if (gamepad1.leftBumperWasPressed()) robot.blocker.unblock().schedule();
+//        if (gamepad1.leftBumperWasReleased()) robot.blocker.block().schedule();
+//        if (gamepad1.leftTriggerWasPressed()) robot.blocker.unblock().schedule();
+//        if (gamepad1.leftTriggerWasReleased()) robot.blocker.block().schedule();
+        if (gamepad1.rightTriggerWasPressed()) robot.outtake.on().schedule();
+        if (gamepad1.rightTriggerWasPressed()) robot.intake.on().schedule();
+        if (gamepad1.rightTriggerWasReleased()) robot.outtake.off().schedule();
+        if (gamepad1.rightTriggerWasReleased()) robot.intake.off().schedule();
 
 
         robot.drivetrain.arcadeDrive(

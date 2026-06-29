@@ -19,10 +19,11 @@ public class Robot {
 
     public final Drivetrain drivetrain;
 //    public final Flywheel flywheel;
-    public final Blocker blocker;
+//    public final Blocker blocker;
 //    public final Turret turret;
-    public final SensorTouch sensorTouch;
-    public final TurretAngle turretAngle;
+//    public final SensorTouch sensorTouch;
+//    public final TurretAngle turretAngle;
+    public final Outtake outtake;
 
     public Robot(OpMode opMode) {
         hardwareMap = opMode.hardwareMap;
@@ -31,11 +32,11 @@ public class Robot {
         drivetrain = new Drivetrain(this);
         intake = new Intake(this);
 //        flywheel = new Flywheel(this);
-        blocker = new Blocker(this);
+//        blocker = new Blocker(this);
 //        turret = new Turret(this);
-        sensorTouch = new SensorTouch(this);
-
+//        sensorTouch = new SensorTouch(this);
+        outtake = new Outtake(this);
         // math telemetry
-        turretAngle = new TurretAngle(this);
+//        turretAngle = new TurretAngle(this);
     }
 }

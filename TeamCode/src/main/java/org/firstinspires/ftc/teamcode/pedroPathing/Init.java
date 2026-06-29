@@ -19,10 +19,10 @@ public abstract class Init extends OpMode {
                 robot.drivetrain.periodic(),
 //                robot.flywheel.periodic(),
 //                robot.turret.periodic(),
-                robot.intake.periodic(),
-                robot.sensorTouch.periodic(),
-                robot.turretAngle.periodic(),
-                robot.blocker.periodic()
+                robot.intake.periodic()
+//                robot.sensorTouch.periodic(),
+//                robot.turretAngle.periodic(),
+//                robot.blocker.periodic()
         );
     }
 
