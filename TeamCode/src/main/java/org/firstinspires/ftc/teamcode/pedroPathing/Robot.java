@@ -23,7 +23,7 @@ public class Robot {
 //    public final Turret turret;
 //    public final SensorTouch sensorTouch;
 //    public final TurretAngle turretAngle;
-    public final Outtake outtake;
+//    public final Outtake outtake;
 
     public Robot(OpMode opMode) {
         hardwareMap = opMode.hardwareMap;
@@ -35,7 +35,7 @@ public class Robot {
 //        blocker = new Blocker(this);
 //        turret = new Turret(this);
 //        sensorTouch = new SensorTouch(this);
-        outtake = new Outtake(this);
+//        outtake = new Outtake(this);
         // math telemetry
 //        turretAngle = new TurretAngle(this);
     }

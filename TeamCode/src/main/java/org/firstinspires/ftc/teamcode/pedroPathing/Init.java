@@ -16,7 +16,7 @@ public abstract class Init extends OpMode {
 
         // pus aici subsysteme cu periodic command/ periodic telemetry
         schedule(
-                robot.drivetrain.periodic(),
+//                robot.drivetrain.periodic(),
 //                robot.flywheel.periodic(),
 //                robot.turret.periodic(),
                 robot.intake.periodic()

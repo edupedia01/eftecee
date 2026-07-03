@@ -1,6 +1,6 @@
 package org.firstinspires.ftc.teamcode.pedroPathing.Subsystems;
 
-import static org.firstinspires.ftc.teamcode.pedroPathing.Auto.Tuning.follower;
+//import static org.firstinspires.ftc.teamcode.pedroPathing.Auto.Tuning.follower;
 
 import com.pedropathing.geometry.Pose;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -19,7 +19,7 @@ public class Turret {
     public Turret(Robot robot){
         turret = robot.hardwareMap.get(DcMotorEx.class, "turret");
         telemetry = robot.telemetry;
-        Pose currentPose = follower.getPose();
+//        Pose currentPose = follower.getPose();
     }
     public void getTurretPos(){
         Xrobot = currentPose.getX();

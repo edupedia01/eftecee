@@ -2,7 +2,6 @@ repositories {
     mavenCentral()
     google() // Needed for androidx
     maven { url = "https://mymaven.bylazar.com/releases"
-            url = "https://repo.dairy.foundation/releases"
     }
 }
 
@@ -21,6 +20,5 @@ dependencies {
     implementation 'com.pedropathing:ftc:2.1.1'
     implementation 'com.pedropathing:telemetry:1.0.0'
     implementation 'com.bylazar:fullpanels:1.0.12'
-    implementation("dev.frozenmilk.sinister:Sloth:0.2.4")
 }
 
